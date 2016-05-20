@@ -6,11 +6,11 @@ NEMU 的代码行数统计小工具，可以根据 git 的历史记录，绘制�
 ![example](/example.png)
 
 ### 图例解释
-nemu-total, kernel-total, game-total 分别代表 nemu, kernel, game 部分的新添加的代码行数。
+nemu-total, kernel-total, game-total 分别代表 nemu, kernel, game 部分的新添加的代码行数（含空白行）。
 
-total 是以上三个部分新添加的代码行数之和。
+total 是新添加的代码行数的总和。
 
-total-space 是以上三个部分新添加的空白行数之和。
+total-space 是新添加的空白行（完全由空白字符组成的行）数量的总和。
 
 ## 使用方法
 首先需要安装 gnuplot 程序，以 ubuntu 为例：
