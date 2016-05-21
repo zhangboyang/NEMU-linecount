@@ -89,7 +89,7 @@ TOT_COMMIT=$(echo "$ALL_COMMIT" | wc -l)
 echo "# line count data generated at `date '+%F %T %s'`"
 echo "#"
 echo "# data format:"
-echo "#  unixtime fail other"
+echo "#   utc-unixtimestamp fail other"
 echo "#   nemu-total nemu-space"
 echo "#   kernel-total kernel-space"
 echo "#   game-total game-space"
@@ -102,7 +102,7 @@ CUR_COMMIT=0
 for i in $ALL_COMMIT; do
     CUR_COMMIT=$[$CUR_COMMIT+1]
     echo "progress: commit $i $CUR_COMMIT/$TOT_COMMIT" >&2
-    echo -n "$(git show -s --format='%ct' $i) "
+    echo -n "$(git show -s --format='%at' $i) "
     git grep -IE '' $i | "$LCPROG" || fail "can't run lcprog"
 done
 
